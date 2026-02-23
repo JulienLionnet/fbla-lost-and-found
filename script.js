@@ -7,8 +7,14 @@ const itemList = document.getElementById("itemList");
  // Add item to Firestore 
  form.addEventListener("submit", async (e) => { e.preventDefault(); 
     const itemName = document.getElementById("itemName").value; 
-    await addDoc(collection(db, "items"), { name: itemName, createdAt: new Date() }); 
+    const itemCategory = document.getElementbyId("itemCategory").value;
+    await addDoc(collection(db, "items"), {
+     name: itemName,
+     category:itemCategory,
+     createdAt: new Date()
+     }); 
     document.getElementById("itemName").value = ""; 
+    document.getElementById("itemCategory").value = "";
     loadItems(); 
 }); 
 
@@ -16,7 +22,7 @@ const itemList = document.getElementById("itemList");
 async function loadItems() { itemList.innerHTML = ""; 
 const querySnapshot = await getDocs(collection(db, "items")); 
 querySnapshot.forEach((doc) => { const li = document.createElement("li"); 
-li.textContent = doc.data().name; 
+li.textContent = '{doc.data().name} 9@{doc.data().category})';
 itemList.appendChild(li); 
 }); 
 } loadItems();

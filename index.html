@@ -7,7 +7,12 @@
     <body> <h1>Lost & Found Prototype</h1> 
         <form id="itemForm"> 
             <input type="text" id="itemName" placeholder="Item name" required> 
-            <button type="submit">Add Item</button> 
+            <select id="itemCategory" required>
+                <option value="">Selct Category</option>
+                <option value="lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+            <button type="submit">Submit</button> 
         </form> 
         <h2>Items:</h2> <ul id="itemList"></ul> 
         <script type="module" src="script.js"></script> 
