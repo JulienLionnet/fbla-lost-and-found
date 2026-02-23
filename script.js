@@ -22,7 +22,7 @@ const itemList = document.getElementById("itemList");
 async function loadItems() { itemList.innerHTML = ""; 
 const querySnapshot = await getDocs(collection(db, "items")); 
 querySnapshot.forEach((doc) => { const li = document.createElement("li"); 
-li.textContent = `${doc.data().name} (${doc.data().category})`;
+li.textContent = `${doc.data().name} (${doc.data().category || "No category"})`;
 itemList.appendChild(li); 
 }); 
 } loadItems();
