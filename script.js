@@ -1,6 +1,8 @@
 import { db } from "./firebase-config.js"; 
 import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"; 
 
+document.addEventListener("DOMContentLoaded", () => {
+
 const form = document.getElementById("itemForm"); 
 const itemList = document.getElementById("itemList");
 
@@ -30,3 +32,4 @@ li.textContent = `${data.name} (${data.category || "No category"}) - ${data.desc
 itemList.appendChild(li); 
 }); 
 } loadItems();
+});
