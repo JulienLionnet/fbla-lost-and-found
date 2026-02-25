@@ -8,13 +8,16 @@ const itemList = document.getElementById("itemList");
  form.addEventListener("submit", async (e) => { e.preventDefault(); 
     const itemName = document.getElementById("itemName").value; 
     const itemCategory = document.getElementById("itemCategory").value;
+    const itemDescription = document.getElementById("itemDescription").value;
     await addDoc(collection(db, "items"), {
      name: itemName,
      category:itemCategory,
+     description: itemDescription,
      createdAt: new Date()
      }); 
     document.getElementById("itemName").value = ""; 
     document.getElementById("itemCategory").value = "";
+    document.getElementById("itemDescription").value = "";
     loadItems(); 
 }); 
 
@@ -22,7 +25,8 @@ const itemList = document.getElementById("itemList");
 async function loadItems() { itemList.innerHTML = ""; 
 const querySnapshot = await getDocs(collection(db, "items")); 
 querySnapshot.forEach((doc) => { const li = document.createElement("li"); 
-li.textContent = `${doc.data().name} (${doc.data().category || "No category"})`;
+const data = doc.data();
+li.textContent = `${data.name} (${data.category || "No category"}) - ${data.description || "No description"}`;
 itemList.appendChild(li); 
 }); 
 } loadItems();
