@@ -4,7 +4,7 @@ import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/
 const form = document.getElementById("itemForm"); 
 const itemList = document.getElementById("itemList");
 
- // Add item to Firestore 
+ // Add item to Firestore Section
  form.addEventListener("submit", async (e) => { e.preventDefault(); 
     const itemName = document.getElementById("itemName").value; 
     const itemCategory = document.getElementbyId("itemCategory").value;
@@ -18,7 +18,7 @@ const itemList = document.getElementById("itemList");
     loadItems(); 
 }); 
 
-// Load items from Firestore 
+// Load items from Firestore Section
 async function loadItems() { itemList.innerHTML = ""; 
 const querySnapshot = await getDocs(collection(db, "items")); 
 querySnapshot.forEach((doc) => { const li = document.createElement("li"); 
