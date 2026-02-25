@@ -7,7 +7,7 @@ const itemList = document.getElementById("itemList");
  // Add item to Firestore Section
  form.addEventListener("submit", async (e) => { e.preventDefault(); 
     const itemName = document.getElementById("itemName").value; 
-    const itemCategory = document.getElementbyId("itemCategory").value;
+    const itemCategory = document.getElementById("itemCategory").value;
     await addDoc(collection(db, "items"), {
      name: itemName,
      category:itemCategory,
