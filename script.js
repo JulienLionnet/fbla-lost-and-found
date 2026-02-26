@@ -1,5 +1,5 @@
 import { db } from "./firebase-config.js"; 
-import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"; 
+import { collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"; 
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -26,9 +26,18 @@ const itemList = document.getElementById("itemList");
 // Load items from Firestore Section
 async function loadItems() { itemList.innerHTML = ""; 
 const querySnapshot = await getDocs(collection(db, "items")); 
-querySnapshot.forEach((doc) => { const li = document.createElement("li"); 
-const data = doc.data();
+querySnapshot.forEach((itemDoc) => { const li = document.createElement("li"); 
+const data = itemDoc.data();
 li.textContent = `${data.name} (${data.category || "No category"}) - ${data.description || "No description"}`;
+
+// Delete Button for the items
+const deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+deleteButton.addEventListener("click", async () => {
+  await deleteDoc(doc(db, "items", itemDoc.id));
+  loadItems();
+});
+li.appendChild(deleteButton);
 itemList.appendChild(li); 
 }); 
 } loadItems();
