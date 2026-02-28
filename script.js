@@ -42,3 +42,6 @@ itemList.appendChild(li);
 }); 
 } loadItems();
 });
+
+
+6
