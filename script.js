@@ -75,8 +75,6 @@ ${data.imageUrl ? `<img src="${data.imageUrl}" width="150px">` : ""}
 <hr>
 `;
 
-itemList.appendChild(li);
-
 // Delete Button for the items
 const deleteButton = document.createElement("button");
 
@@ -90,7 +88,7 @@ deleteButton.addEventListener("click", async () => {
 
 li.appendChild(deleteButton);
 li.style.marginBottom = "20px";
+
 itemList.appendChild(li); 
 }); 
-} loadItems();
-});
+}
