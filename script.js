@@ -81,7 +81,7 @@ const deleteButton = document.createElement("button");
 
 deleteButton.textContent = "Delete";
 deleteButton.addEventListener("click", async () => {
-  await deleteDoc(doc(db, "items", itemDoc.id));
+  await deleteDoc(doc(db, "items", doc.id));
   loadItems();
 });
 
