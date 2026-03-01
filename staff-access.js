@@ -1,3 +1,9 @@
+const password = prompt("Enter dashboard access password:");
+
+if (password !== "FBLA2026") {
+  alert("Access denied.");
+  window.location.href = "index.html";
+}
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const auth = getAuth();
