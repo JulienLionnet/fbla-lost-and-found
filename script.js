@@ -9,6 +9,8 @@ import
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 const storage = getStorage();
 
+import { query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
 document.addEventListener("DOMContentLoaded", () => 
   {
 const form = document.getElementById("itemForm"); 
@@ -59,7 +61,13 @@ if (itemList) {
 async function loadItems() {
 itemList.innerHTML = ""; 
 
-const querySnapshot = await getDocs(collection(db, "items")); 
+
+const q = query(
+  collection(db, "items"),
+   where("status", "==", "approved")
+);
+
+const querySnapshot = await getDocs(q);
 
 querySnapshot.forEach((docSnap) => {
 
@@ -85,7 +93,7 @@ deleteButton.addEventListener("click", async () => {
   await deleteDoc(doc(db, "items", docSnap.id));
   li.remove();//removes the item from the list immediately after deletion without needing to reload the page
 
-//loadItems(); //refresh the list after deletion (unused)
+//loadItems(); refresh the list after deletion (unused)
 });
 
 li.appendChild(deleteButton);
@@ -94,5 +102,4 @@ li.style.marginBottom = "20px";
 itemList.appendChild(li); 
 }); 
 }
-
 });
