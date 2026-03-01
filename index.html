@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+    <button onclick = "window.location.href='homepage.html'">
+        Home   
+     </button>
+    <head> 
+        <title>Lost & Found FBLA</title> 
+        <link rel="stylesheet" href="style.css"> 
+    </head> 
+            <script type="module" src="script.js"></script> 
+    <body> <h1>Lost & Found Prototype</h1> 
+        <form id="itemForm"> 
+            <input type="text" id="itemName" placeholder="Item name" required> 
+            <select id="itemCategory" required>
+                <option value="">Selct Category</option>
+                <option value="lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+            <label for="itemDescription">Description:</label>
+            <textarea id="itemDescription" placeholder="Describe this item" required></textarea>
+            <button type="submit">Submit</button> 
+            
+        </form> 
+        
+        <h2>Items:</h2> <ul id="itemList"></ul> 
+        
+    </body> 
+</html>

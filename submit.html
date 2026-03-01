@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="style.css">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +9,9 @@
     <!-- Free Font Awesome (WORKING VERSION) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+  
+  <script type="module" src="script.js"></script> 
+
 <body>
 
 <!-- NAVBAR -->
@@ -37,32 +39,18 @@
 
     <div class="form-container">
 
-        <form>
-
-            <label>Your Name</label>
-            <input type="text" placeholder="Enter your full name">
+    <form id="itemForm"> 
+            <input type="text" id="itemName" placeholder="Item name" required> 
+            <select id="itemCategory" required>
+                <option value="">Selct Category</option>
+                <option value="lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+            <label for="itemDescription">Description:</label>
+            <textarea id="itemDescription" placeholder="Describe this item" required></textarea>
+            <button type="submit">Submit</button> 
             
-            <label>Item Type</label>
-            <div class="item-type">
-                <button type="button" class="active">Lost</button>
-                <button type="button">Found</button>
-            </div>
-
-            <label>Location</label>
-            <input type="text" placeholder="Where was it lost/found?">
-
-            <label>Date</label>
-            <input type="date">
-
-            <label>Item Description</label>
-            <textarea placeholder="Describe the item (color, brand, etc.)"></textarea>
-
-            <label>Upload Photo (Optional)</label>
-            <input type="file">
-
-            <button type="submit" class="submit-btn">Submit</button>
-
-        </form>
+        </form> 
 
         
 
