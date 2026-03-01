@@ -61,10 +61,10 @@ itemList.innerHTML = "";
 
 const querySnapshot = await getDocs(collection(db, "items")); 
 
-querySnapshot.forEach((doc) => {
+querySnapshot.forEach((docSnap) => {
 
 const li = document.createElement("li"); 
-const data = doc.data();
+const data = docSnap.data();
 
 li.innerHTML = `
 <strong>${data.name}</strong> (${data.category}) <br>
@@ -84,7 +84,7 @@ deleteButton.textContent = "Delete";
 deleteButton.style.marginTop = "5px"
 
 deleteButton.addEventListener("click", async () => {
-  await deleteDoc(doc(db, "items", doc.id));
+  await deleteDoc(doc(db, "items", docSnap.id));
   loadItems(); //refresh the list after deletion
 });
 
