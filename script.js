@@ -83,7 +83,9 @@ deleteButton.style.marginTop = "5px"
 
 deleteButton.addEventListener("click", async () => {
   await deleteDoc(doc(db, "items", docSnap.id));
-  loadItems(); //refresh the list after deletion
+  li.remove();//removes the item from the list immediately after deletion without needing to reload the page
+
+//loadItems(); //refresh the list after deletion (unused)
 });
 
 li.appendChild(deleteButton);
@@ -92,3 +94,5 @@ li.style.marginBottom = "20px";
 itemList.appendChild(li); 
 }); 
 }
+
+});
