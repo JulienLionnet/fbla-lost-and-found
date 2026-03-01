@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
   
-  <script type="module" src="script.js"></script> 
+<script type="module" src="script.js"></script> 
 
 <body>
 
@@ -40,17 +40,35 @@
     <div class="form-container">
 
     <form id="itemForm"> 
-            <input type="text" id="itemName" placeholder="Item name" required> 
+
+        <label>Item Name:</label>    
+        <input type="text" id="itemName" placeholder="Item name" required> 
+            <label>Category:</label>
             <select id="itemCategory" required>
                 <option value="">Selct Category</option>
                 <option value="lost">Lost</option>
                 <option value="Found">Found</option>
             </select>
-            <label for="itemDescription">Description:</label>
-            <textarea id="itemDescription" placeholder="Describe this item" required></textarea>
-            <button type="submit">Submit</button> 
-            
-        </form> 
+        
+<!--Location-->
+<label>Location:</label>
+<input type="text" id="itemLocation" placeholder="Where was the item lost/found?" required>
+
+<!--Date & Time-->
+<label>Date & Time:</label>
+<input type="datetime-local" id="itemDateTime" required>
+
+<!--Photo-->
+<label>Upload Photo:</label>
+<input type="file" id="itemImage" accept="image/*">
+
+<!--Description-->
+<label>Description:</label>
+<textarea id="itemDescription" placeholder="Describe this item" required></textarea>
+
+<!--Submit Button-->
+<button type="submit">Submit</button> 
+</form> 
 
         
 
