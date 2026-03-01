@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    
 }
 
 body {
@@ -217,7 +219,14 @@ footer {
 .catalog {
     padding: 120px 40px;
     text-align: center;
-   
+    /* Soft blue gradient */
+    background: linear-gradient(
+        135deg,
+        #eef3f9 0%,
+        #dfe9f5 40%,
+        #cfdced 100%
+    );
+    min-height: 100vh;
 }
 
 .catalog h2 {
@@ -269,6 +278,7 @@ footer {
     gap: 30px;
     flex-wrap: wrap;
 }
+
 
 
 
@@ -335,7 +345,9 @@ textarea {
 .submit-btn:hover {
     background: linear-gradient(135deg, #1e88e5, #0d47a1);
 }
-
+.form-container{
+  height: 100vh;
+}
 
 
 
