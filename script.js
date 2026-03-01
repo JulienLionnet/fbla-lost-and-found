@@ -48,23 +48,24 @@ if (form) {
      });
 
 form.reset();
-alert("Item submitted successfully!");
-    document.getElementById("itemName").value = ""; 
-    document.getElementById("itemCategory").value = "";
-    document.getElementById("itemDescription").value = "";
-    loadItems(); 
+alert("Item submitted successfully!"); 
 }); 
 }
 
 // Load items from Firestore Section
 if (itemList) {
-  loadItems();}
+  loadItems();
+}
 async function loadItems() {
 itemList.innerHTML = ""; 
+
 const querySnapshot = await getDocs(collection(db, "items")); 
+
 querySnapshot.forEach((doc) => {
+
 const li = document.createElement("li"); 
 const data = doc.data();
+
 li.innerHTML = `
 <strong>${data.name}</strong> (${data.category}) <br>
 ${data.description} <br>
@@ -80,12 +81,15 @@ itemList.appendChild(li);
 const deleteButton = document.createElement("button");
 
 deleteButton.textContent = "Delete";
+deleteButton.style.marginTop = "5px"
+
 deleteButton.addEventListener("click", async () => {
   await deleteDoc(doc(db, "items", doc.id));
-  loadItems();
+  loadItems(); //refresh the list after deletion
 });
 
 li.appendChild(deleteButton);
+li.style.marginBottom = "20px";
 itemList.appendChild(li); 
 }); 
 } loadItems();
