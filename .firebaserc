@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "lost-and-found-fbla-44b57"
-  }
+    "default": "lost-and-found-fbla-44b57",
+    "norm": "lost-and-found-fbla-44b57"
+  },
+  "targets": {},
+  "etags": {}
 }
