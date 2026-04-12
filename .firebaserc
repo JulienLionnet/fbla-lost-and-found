@@ -1,5 +1,6 @@
 {
   "projects": {
+    "2026": "lost-and-found-fbla-2026",
     "default": "lost-and-found-fbla-44b57"
   },
   "targets": {},
