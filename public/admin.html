@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel — HenHud Helps</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .admin-hero {
+            background: linear-gradient(135deg, #0a4bd9, #1565c0);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .admin-hero h2 { font-size: 32px; margin-bottom: 8px; }
+        .admin-hero p { font-size: 15px; opacity: 0.85; }
+
+        .admin-login {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .admin-login p {
+            font-size: 15px;
+            color: #1d2b4f;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .admin-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px 60px;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tab-btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            background: #e0e0e0;
+            color: #333;
+            transition: 0.2s;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(to right, #1e88e5, #1565c0);
+            color: white;
+        }
+
+        .admin-card {
+            background: white;
+            border-radius: 14px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+        }
+
+        .admin-card h3 {
+            color: #1d2b4f;
+            margin-bottom: 8px;
+        }
+
+        .admin-card p {
+            font-size: 14px;
+            color: #555;
+            margin: 3px 0;
+        }
+
+        .admin-card img {
+            margin-top: 10px;
+            border-radius: 8px;
+            max-width: 180px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .approve-btn {
+            background: linear-gradient(to right, #43a047, #2e7d32);
+            color: white;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: 0.2s;
+        }
+
+        .reject-btn {
+            background: linear-gradient(to right, #ef5350, #c62828);
+            color: white;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: 0.2s;
+        }
+
+        .delete-btn {
+            background: #757575;
+            color: white;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: 0.2s;
+        }
+
+        .edit-btn {
+            background: linear-gradient(to right, #fb8c00, #e65100);
+            color: white;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: 0.2s;
+        }
+
+        .approve-btn:hover { opacity: 0.85; }
+        .reject-btn:hover { opacity: 0.85; }
+        .delete-btn:hover { opacity: 0.85; }
+        .edit-btn:hover { opacity: 0.85; }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .status-pending { background: #fff3e0; color: #e65100; }
+        .status-approved { background: #e8f5e9; color: #2e7d32; }
+        .status-rejected { background: #ffebee; color: #c62828; }
+
+        .empty-msg {
+            text-align: center;
+            color: #999;
+            padding: 40px;
+            font-size: 15px;
+        }
+
+        /* Edit Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: white;
+            border-radius: 14px;
+            padding: 30px;
+            width: 500px;
+            max-width: 90%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .modal h3 {
+            margin-bottom: 20px;
+            color: #1d2b4f;
+        }
+
+        .modal label {
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .modal input, .modal textarea, .modal select {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal textarea { height: 80px; resize: none; }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: flex-end;
+        }
+
+        .save-btn {
+            background: linear-gradient(to right, #1e88e5, #1565c0);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cancel-btn {
+            background: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<script type="module" src="admin.js"></script>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <h2>HenHud Helps</h2>
+        <p>Lost & Found For Students</p>
+    </div>
+    <div class="nav-links">
+        <a href="https://www.henhudschools.org/" class="active">HenHud Website</a>
+        <a href="index.html">Homepage</a>
+        <a href="submit.html">Submit Item</a>
+        <a href="catalog.html">Item Catalog</a>
+        <a href="guide.html">Guide</a>
+    </div>
+    <div class="nav-icons">
+        <i class="fa-solid fa-person"></i>
+    </div>
+</nav>
+
+<div class="admin-hero">
+    <h2>Admin Panel</h2>
+    <p>Manage lost & found submissions</p>
+</div>
+
+<!-- LOGIN SECTION (shown when logged out) -->
+<div id="adminLogin" class="admin-login">
+    <p>Sign in with an authorized admin Google account to continue.</p>
+    <button id="adminLoginBtn" class="login-btn">
+        <i class="fa-brands fa-google"></i>&nbsp; Sign in with Google
+    </button>
+    <p id="adminError" style="color: red; margin-top: 10px;"></p>
+</div>
+
+<!-- ADMIN PANEL (shown when logged in as admin) -->
+<div id="adminPanel" style="display:none;">
+    <div class="admin-container">
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <p id="adminUserInfo" style="color:#1d2b4f; font-weight:500;"></p>
+            <button id="adminLogoutBtn" class="logout-btn">Sign Out</button>
+        </div>
+
+        <!-- TABS -->
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="pending">Pending</button>
+            <button class="tab-btn" data-tab="approved">Approved</button>
+            <button class="tab-btn" data-tab="rejected">Rejected</button>
+            <button class="tab-btn" data-tab="all">All Items</button>
+        </div>
+
+        <div id="adminItemList"></div>
+
+    </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal-overlay" id="editModal">
+    <div class="modal">
+        <h3>Edit Item</h3>
+        <input type="hidden" id="editItemId">
+        <label>Item Name:</label>
+        <input type="text" id="editName">
+        <label>Category:</label>
+        <select id="editCategory">
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+            <option value="returned">Returned</option>
+        </select>
+        <label>Location:</label>
+        <input type="text" id="editLocation">
+        <label>Date & Time:</label>
+        <input type="datetime-local" id="editDateTime">
+        <label>Description:</label>
+        <textarea id="editDescription"></textarea>
+        <div class="modal-actions">
+            <button class="cancel-btn" id="cancelEdit">Cancel</button>
+            <button class="save-btn" id="saveEdit">Save Changes</button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1691159592/henhudschoolsorg/ik5chnsgkn3kc7fjfilv/Copyof2014_Official_Logo_Large1.png" alt="HenHud Logo" class="footer-logo">
+        <p>© 2026 HenHud Helps | Lost & Found Website</p>
+    </div>
+</footer>
+
+</body>
+</html>

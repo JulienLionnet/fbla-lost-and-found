@@ -1,0 +1,85 @@
+[33m16c0b3e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Lock project to 2026 Firebase
+[33m1ac3e98[m Lock project to 2026 Firebase
+[33mb8a9b8a[m Merge branch 'main' of https://github.com/JulienLionnet/fbla-lost-and-found
+[33mfcaf76c[m Lock project to 2026 Firebase
+[33m5053c45[m Rename elderindex.html to index.html
+[33m307548a[m Update elderindex.html
+[33mb8d7089[m Delete public/index.html
+[33m7a696c5[m Lock project to 2026 Firebase
+[33mccb8cb6[m Lock project to 2026 Firebase
+[33mb4e2074[m Lock project to 2026 Firebase
+[33mdc0d93e[m Merge branch 'main' of https://github.com/JulienLionnet/fbla-lost-and-found
+[33m735d26a[m Lock project to 2026 Firebase
+[33md918fab[m Update style.css
+[33mebe9d0e[m Lock project to 2026 Firebase
+[33m084c969[m Update style.css
+[33m052a709[m Update guide.html
+[33m430d8b9[m Update submit.html
+[33me10afce[m Update catalog.html
+[33mad50aba[m Update index-replace.html
+[33m76a8e5c[m Update style.css
+[33m557c70d[m adding itemlist extra features
+[33m9da352f[m adding itemlist extra features
+[33m88e2595[m adding itemlist extra features
+[33mad6ec02[m adding itemlist extra features
+[33m75e1c31[m adding itemlist extra features
+[33m1587020[m adding itemlist extra features
+[33m5d3aebb[m adding itemlist extra features
+[33m240f1d3[m adding itemlist extra features
+[33m4b461f1[m adding itemlist extra features
+[33ma9995bc[m adding itemlist extra features
+[33mae76d8a[m adding itemlist extra features
+[33mdbce5a5[m adding itemlist extra features
+[33m53dcf9f[m adding itemlist extra features
+[33m59a54f8[m adding itemlist extra features
+[33m7b98381[m adding itemlist extra features
+[33m27a6f3a[m adding itemlist extra features
+[33m701cf78[m adding itemlist extra features
+[33m9098da5[m adding itemlist extra features
+[33m1ef54ba[m adding itemlist extra features
+[33m497a6c8[m adding itemlist extra features
+[33m94d187a[m adding itemlist extra features
+[33m9953764[m adding itemlist extra features
+[33m8d51eed[m adding itemslist
+[33m280e0b0[m Update style.css
+[33m388adab[m adding itemslist
+[33mfe7bb8d[m adding itemslist
+[33me0a339a[m adding itemslist
+[33maa06ec3[m adding itemslist
+[33m481caa3[m Update catalog.html
+[33mbe02b11[m Update guide.html
+[33m6a386f8[m adding itemslist
+[33m14295ee[m adding itemslist
+[33me092d54[m erge branch 'main' of https://github.com/JulienLionnet/fbla-lost-and-found
+[33m4f9cbf4[m adding itemslist
+[33m32c1aa5[m Update catalog.html
+[33m97542ba[m Update guide.html
+[33m80f728a[m Update submit.html
+[33md42e924[m Update homepage.html
+[33md7d56de[m fixing css
+[33maf3e8bc[m Create catalog.html
+[33m93b9fb5[m Update submit.html
+[33m17db1e2[m Update style.css
+[33m5e95d7d[m Create guide.html
+[33mf1721d5[m Rename catalog.html to submit.html
+[33m48a15d6[m Rename index.html to catalog.html
+[33m263f1ee[m Update homepage.html
+[33m2403b73[m Update index.html
+[33m1bd55af[m Merge branch 'main' of https://github.com/JulienLionnet/fbla-lost-and-found test merge
+[33m60665fe[m added homepage + button to go between homepage and search page
+[33m824a775[m Update index.html
+[33m519cf74[m added homepage + button to go between homepage and search page
+[33me494970[m trying to add delete featuer + bugfixes
+[33m1aaa051[m trying to add description feature + bugfixes
+[33m7d0253c[m trying to add description feature + bugfixes
+[33ma312860[m trying to add description feature
+[33m01ef228[m more bug fixing
+[33m98e7083[m more bug fixing
+[33m158836c[m more bug fixing
+[33maf9d693[m oops forgot to save js
+[33ma175a02[m added categories 'lost' et 'found' and updated some other stuff
+[33m5981e20[m redid the firebase-config to work with url
+[33mc460de7[m fixed name for firebase js file
+[33m48025c3[m entered css and js framework
+[33m1c2648d[m entered basic HTML framework
+[33m41ecfd1[m Initial project setup

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission Form</title>
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="style.css"> 
+    <!-- Free Font Awesome (WORKING VERSION) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+  
+<script type="module" src="script.js"></script> 
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <h2>HenHud Helps</h2>
+        <p>Lost & Found For Students</p>
+    </div>
+
+    <div class="nav-links">
+        <a href="https://www.henhudschools.org/" class="active">HenHud Website</a>
+         <a href="index.html">Homepage</a>
+        <a href="submit.html">Submit Item</a>
+        <a href="catalog.html">Item Catalog</a>
+        <a href="guide.html">Guide</a>
+       
+    </div>
+
+    <a href="enter.html" target="_blank" rel="noopener noreferrer">
+    <div class="nav-icons">
+       <i class="fa-solid fa-person"></i>
+    </div>
+    </a>
+</nav>
+
+    <div class="form-container">
+
+    <form id="itemForm"> 
+
+        <label>Item Name:</label>    
+        <input type="text" id="itemName" placeholder="Item name" required> 
+            <label>Category:</label>
+            <select id="itemCategory" required>
+                <option value="">Selct Category</option>
+                <option value="lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+        
+<!--Location-->
+<label>Location:</label>
+<input type="text" id="itemLocation" placeholder="Where was the item lost/found?" required>
+
+<!--Date & Time-->
+<label>Date & Time:</label>
+<input type="datetime-local" id="itemDateTime">
+
+<!--Photo-->
+<label>Upload Photo:</label>
+<input type="file" id="itemImage" accept="image/*">
+
+<!--Description-->
+<label>Description:</label>
+<textarea id="itemDescription" placeholder="Describe this item" required></textarea>
+
+<!--Submit Button-->
+<button type="submit">Submit</button> 
+</form> 
+        
+    </div>
+    
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1691159592/henhudschoolsorg/ik5chnsgkn3kc7fjfilv/Copyof2014_Official_Logo_Large1.png" alt="HenHud Logo" class="footer-logo">
+        <p>© 2026 HenHud Helps | Lost & Found Website</p>
+    </div>
+</footer>
+
+</body>
+
+</html> 
