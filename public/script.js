@@ -50,8 +50,6 @@ if (form) {
      createdAt: new Date()
      });
 
-loadItems();
-
 form.reset();
 alert("Item submitted successfully!"); 
 }); 
