@@ -11,6 +11,9 @@ const storage = getStorage(app,"gs://lost-and-found-fbla-2026.firebasestorage.ap
 
 import { query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
 document.addEventListener("DOMContentLoaded", () => 
   {
 const form = document.getElementById("itemForm"); 
@@ -83,6 +86,11 @@ ${data.dateTime} <br>
 ${data.imageUrl ? `<img src="${data.imageUrl}" width="150px">` : ""}
 <hr>
 `;
+
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+
 
 // Admin emails
 const ADMIN_EMAILS = [
