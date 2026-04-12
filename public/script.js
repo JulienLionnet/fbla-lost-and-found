@@ -46,8 +46,11 @@ if (form) {
      location: itemLocation,
      dateTime: itemDateTime,
      imageUrl: imageUrl,
+     status: "approved",  
      createdAt: new Date()
      });
+
+loadItems();
 
 form.reset();
 alert("Item submitted successfully!"); 
@@ -93,7 +96,6 @@ deleteButton.addEventListener("click", async () => {
   await deleteDoc(doc(db, "items", docSnap.id));
   li.remove();//removes the item from the list immediately after deletion without needing to reload the page
 
-//loadItems(); refresh the list after deletion (unused)
 });
 
 li.appendChild(deleteButton);
