@@ -84,6 +84,67 @@ ${data.imageUrl ? `<img src="${data.imageUrl}" width="150px">` : ""}
 <hr>
 `;
 
+// Admin emails
+const ADMIN_EMAILS = [
+  "julienmlionnet@gmail.com",
+  "jucrockettlionnet@students.henhudschools.org",
+  "etramos@students.henhudschools.org",
+  "eramos101910@yahoo.com"
+];
+
+function isAdmin(email) {
+  return ADMIN_EMAILS.includes(email.toLowerCase());
+}
+
+function isAllowedEmail(email) {
+  return email.endsWith("@gmail.com")
+      || email.endsWith("@henhudschools.org")
+      || email.endsWith("@students.henhudschools.org");
+}
+
+// --- NAVBAR ADMIN LINK ---
+function updateNavbar(user) {
+  const navLinks = document.querySelector(".nav-links");
+  if (!navLinks) return;
+
+  const existing = document.getElementById("adminNavLink");
+  if (existing) existing.remove();
+
+  if (user && isAdmin(user.email)) {
+    const adminLink = document.createElement("a");
+    adminLink.href = "admin.html";
+    adminLink.id = "adminNavLink";
+    adminLink.textContent = "Admin Panel";
+    adminLink.style.color = "#e65100";
+    adminLink.style.fontWeight = "bold";
+    navLinks.appendChild(adminLink);
+  }
+}
+
+  // --- LOGIN BUTTON ---
+  if (loginBtn) {
+    loginBtn.addEventListener("click", async () => {
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const email = result.user.email;
+        if (!isAllowedEmail(email) && !isAdmin(email)) {
+          alert("Only @gmail.com, @henhudschools.org, or @students.henhudschools.org accounts are allowed.");
+          await signOut(auth);
+        }
+      } catch (error) {
+        console.error("Login failed:", error);
+        alert("Login failed. Please try again.");
+      }
+    });
+  }
+
+  // --- LOGOUT BUTTON ---
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+    });
+  }
+  
 // Delete Button for the items
 const deleteButton = document.createElement("button");
 
