@@ -5,15 +5,15 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-s
 
 //project config
 const firebaseConfig = {
-  apiKey: "AIzaSyATiSWBRVl-YQdeeWigUYeRkYmlyyB39gw",
-  authDomain: "lost-and-found-fbla-44b57.firebaseapp.com",
-  projectId: "lost-and-found-fbla-44b57",
-  storageBucket: "lost-and-found-fbla-44b57.firebasestorage.app",
-  messagingSenderId: "401811273070",
-  appId: "1:401811273070:web:34ba736b07c64bcf5d7d7f",
-  measurementId: "G-XMW9BM4FTX"
+ apiKey: "AIzaSyALCHmmgYUqD2OxfJAMj8IXJeHE2DxsKz0",
+  authDomain: "lost-and-found-fbla-2026.firebaseapp.com",
+  projectId: "lost-and-found-fbla-2026",
+  storageBucket: "lost-and-found-fbla-2026.firebasestorage.app",
+  messagingSenderId: "95198601383",
+  appId: "1:95198601383:web:88c67f0e00574f133b7b82"
 };
-
+// measurementId: "G-XMW9BM4FTX"
+  //measurement id is from old one, replace when you find the new one
 export const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
