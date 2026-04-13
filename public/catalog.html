@@ -2,16 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Catalog</title>
-
-    <!-- CSS -->
-     <link rel="stylesheet" href="style.css"> 
-    <!-- Free Font Awesome (WORKING VERSION) -->
+    <title>Catalog — HenHud Helps</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .filter-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
+        .filter-row select {
+            padding: 10px 14px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            background: white;
+            color: #1d2b4f;
+            cursor: pointer;
+            outline: none;
+        }
+
+        #itemList {
+            max-width: 700px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+        }
+    </style>
 </head>
-  <script type="module" src="script.js"></script> 
+
 <body>
+
+<script type="module" src="script.js"></script>
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -19,42 +44,54 @@
         <h2>HenHud Helps</h2>
         <p>Lost & Found For Students</p>
     </div>
-
     <div class="nav-links">
         <a href="https://www.henhudschools.org/" class="active">HenHud Website</a>
         <a href="index.html">Homepage</a>
         <a href="submit.html">Submit Item</a>
         <a href="catalog.html">Item Catalog</a>
         <a href="guide.html">Guide</a>
-       
     </div>
-
-   <a href="enter.html" target="_blank" rel="noopener noreferrer">
-    <div class="nav-icons">
-       <i class="fa-solid fa-person"></i>
-    </div>
+    <a href="enter.html" target="_blank" rel="noopener noreferrer">
+        <div class="nav-icons">
+            <i class="fa-solid fa-person"></i>
+        </div>
     </a>
 </nav>
 
-<!-- CATALOG -->
-<section class="catalog-hero">
+<section class="catalog">
+
     <h2>Item Catalog</h2>
-    <p>Browse all lost and found items submitted by HenHud students</p>
-</section>
 
-<!-- SEARCH + FILTER -->
-<section class="catalog-controls">
     <div class="search-wrapper">
-    <div class="search-bar">
-        <input type="text" placeholder="Search for lost or found items...">
-    <button>Search</button>
-    </div>
- </section>   
+        <div>
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search by name, location, description...">
+                <button>Search</button>
+            </div>
 
-<!-- Item List-->
- <section class="catalog-section">
-    <p id="resultsCount" class="results-count"></p>
-    <div id="itemList" class="item-grid"></div>
+            <!-- Filter + Sort Row -->
+            <div class="filter-row">
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="lost">Lost</option>
+                    <option value="found">Found</option>
+                    <option value="returned">Returned</option>
+                </select>
+
+                <select id="sortFilter">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="name-az">Name A → Z</option>
+                    <option value="name-za">Name Z → A</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item List -->
+    <ul id="itemList"></ul>
+
 </section>
 
 <!-- FOOTER -->
@@ -64,6 +101,6 @@
         <p>© 2026 HenHud Helps | Lost & Found Website</p>
     </div>
 </footer>
-</section>
+
 </body>
 </html>

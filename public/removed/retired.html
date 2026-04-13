@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HenHud Helps</title>
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="style.css"> 
+    <!-- Free Font Awesome (WORKING VERSION) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <h2>HenHud Helps</h2>
+        <p>Lost & Found For Students</p>
+    </div>
+
+    <div class="nav-links">
+        <a href="https://www.henhudschools.org/" class="active">HenHud Website</a>
+         <a href="index.html">Homepage</a>
+        <a href="submit.html">Submit Item</a>
+        <a href="catalog.html">Item Catalog</a>
+        <a href="guide.html">Guide</a>
+       
+    </div>
+    
+
+    <div class="nav-icons">
+        <i class="fa-solid fa-bell"></i>
+       <i class="fa-solid fa-envelope"></i>
+    </div>
+</nav>
+<!-- HERO -->
+    <button onclick = "window.location.href='index.html'">
+        Home   
+     </button>
+    <head> 
+        <title>Lost & Found FBLA</title> 
+        <link rel="stylesheet" href="style.css"> 
+    </head> 
+            <script type="module" src="script.js"></script> 
+    <body> <h1>Lost & Found Prototype</h1> 
+        <form id="itemForm"> 
+            <input type="text" id="itemName" placeholder="Item name" required> 
+            <select id="itemCategory" required>
+                <option value="">Selct Category</option>
+                <option value="lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+            <label for="itemDescription">Description:</label>
+            <textarea id="itemDescription" placeholder="Describe this item" required></textarea>
+            <button type="submit">Submit</button> 
+            
+        </form> 
+        
+        <h2>Items:</h2> <ul id="itemList"></ul> 
+        
+    </body> 
+</html>
