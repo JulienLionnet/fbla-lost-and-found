@@ -42,15 +42,6 @@ function updateNavbar(user) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-
-  const form = document.getElementById("itemForm");
-  const itemList = document.getElementById("itemList");
-
-  // Update navbar based on auth state (works on both submit.html and catalog.html)
-  onAuthStateChanged(auth, (user) => {
-    updateNavbar(user);
-  });
 
   // --- SUBMIT FORM (submit.html only) ---
   if (form) {
