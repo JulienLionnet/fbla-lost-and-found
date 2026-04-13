@@ -274,9 +274,10 @@ footer {
 /* Card Spacing */
 .catalog-grid {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;    
     gap: 30px;
-    flex-wrap: wrap;
+    justify-content: center;
+        
 }
 
 
