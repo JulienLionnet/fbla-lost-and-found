@@ -93,13 +93,13 @@ function initCatalog() {
     itemList.innerHTML = "";
  
     if (items.length === 0) {
-      itemList.innerHTML = "<li style='color:#999;list-style:none;text-align:center;padding:30px;'>No items match your search.</li>";
+      itemList.innerHTML = "<p style='color:#999;text-align:center;padding:30px;width:100%;'>No items match your search.</p>";
       return;
     }
  
     items.forEach(data => {
       const li = document.createElement("div");
-       
+      li.style.cssText = "list-style:none; width:300px; flex-shrink:0;";
       const category = (data.category || "unknown").toLowerCase();
       const badgeColor =
         category === "lost"     ? "#e53935" :
@@ -162,7 +162,7 @@ function initCatalog() {
   }
  
   async function loadItems() {
-    itemList.innerHTML = "<li style='color:#999;list-style:none;text-align:center;padding:30px;'>Loading...</li>";
+    itemList.innerHTML = "<p style='color:#999;text-align:center;padding:30px;width:100%;'>Loading...</p>";
  
     const q = query(collection(db, "items"), where("status", "==", "approved"));
     const snapshot = await getDocs(q);
@@ -193,4 +193,3 @@ function initCatalog() {
 onAuthStateChanged(auth, updateNavbar);
 initSubmitForm();
 initCatalog();
- 
