@@ -56,6 +56,10 @@ function initSubmitForm() {
  
     let imageUrl = "";
     if (imageFile) {
+      if (imageFile.size > 5 * 1024 * 1024) {
+    alert("Image must be under 5MB. Please choose a smaller file.");
+    return;
+  }
       const imageRef = ref(storage, `items/${Date.now()}_${imageFile.name}`);
       await uploadBytes(imageRef, imageFile);
       imageUrl = await getDownloadURL(imageRef);
