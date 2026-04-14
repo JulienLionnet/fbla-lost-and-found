@@ -279,6 +279,7 @@ footer {
     margin: 30px auto;
     padding: 20px;
     text-align: left;
+    align-items: start;
 }
 
 /* Card Spacing */
