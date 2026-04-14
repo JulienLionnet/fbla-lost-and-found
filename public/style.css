@@ -76,13 +76,13 @@ body {
 }
 /*Buttons*/
 .submit-btn, .btn, .orange-btn, .search-bar button {
-    border-radius: 6px;
+    border-radius: 12px;
 }
 select {
     width: 100%;
     padding: 10px;
     margin-top: 6px;
-    border-radius: 6px;
+    border-radius: 12px;
     border: 1px solid #ccc;
     font-family: 'Poppins', sans-serif;
     background: white;
@@ -90,7 +90,7 @@ select {
 input[type="file"] {
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 12px;
     width: 100%;
     background: white;
     font-family: 'Poppins', sans-serif;
