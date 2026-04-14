@@ -360,6 +360,7 @@ textarea {
  .footer {
     background: #0d47a1;   
     padding: 10px 0;
+    margin-top: auto;
 }
 
 .footer-content {
