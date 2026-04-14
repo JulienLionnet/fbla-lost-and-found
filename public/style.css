@@ -327,8 +327,8 @@ textarea {
 
 .item-type button {
     flex: 1;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 12px;
+    border-radius: 20px;
     border: none;
     background: #e0e0e0;
     cursor: pointer;
@@ -346,7 +346,7 @@ textarea {
    background: linear-gradient(135deg, #1e88e5, #0d47a1);
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 20px;
     font-size: 16px;
     cursor: pointer;
 }
