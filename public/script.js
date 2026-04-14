@@ -89,6 +89,19 @@ function initCatalog() {
   const categoryFilter = document.getElementById("categoryFilter");
   const sortFilter     = document.getElementById("sortFilter");
  
+  function formatDateTime(raw) {
+  if (!raw) return "—";
+  const date = new Date(raw);
+  return date.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true
+  });
+}
+
   function renderItems(items) {
     itemList.innerHTML = "";
  
@@ -115,7 +128,7 @@ function initCatalog() {
             </span>
           </div>
           <p style="font-size:13px;color:#555;margin:4px 0;"><strong>📍 Location:</strong> ${data.location || "—"}</p>
-          <p style="font-size:13px;color:#555;margin:4px 0;"><strong>🕐 Date & Time:</strong> ${data.dateTime || "—"}</p>
+          <p style="font-size:13px;color:#555;margin:4px 0;"><strong>🕐 Date & Time:</strong> ${formatDateTime(data.dateTime)}</p>
           <p style="font-size:13px;color:#555;margin:8px 0;">${data.description || ""}</p>
           ${data.imageUrl ? `<img src="${data.imageUrl}" style="margin-top:10px;border-radius:8px;max-width:180px;">` : ""}
         </div>
