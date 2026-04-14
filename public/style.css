@@ -74,7 +74,10 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     font-size: 36px;
 }
-
+/*Buttons*/
+.submit-btn, .btn, .orange-btn, .search-bar button {
+    border-radius: 12px;
+}
 /* CARDS */
 .cards {
     display: flex;
@@ -309,7 +312,7 @@ label {
 input, textarea {
     width: 100%;
     padding: 10px;
-    margin-top: 6px;
+    margin-top: 10px;
     border-radius: 12px;
     border: 1px solid #ccc;
 }
@@ -322,7 +325,7 @@ textarea {
 .item-type {
     display: flex;
     gap: 10px;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .item-type button {
