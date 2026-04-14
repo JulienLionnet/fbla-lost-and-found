@@ -94,7 +94,7 @@ input[type="file"] {
     width: 100%;
     background: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 /* CARDS */
 .cards {
@@ -141,7 +141,7 @@ input[type="file"] {
     background: #1e88e5;
     color: white;
     padding: 5px 12px;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 20px;
     display: inline-block;
     margin-bottom: 15px;
