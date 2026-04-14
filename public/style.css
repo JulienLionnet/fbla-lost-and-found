@@ -184,17 +184,22 @@ footer {
 }
 
 
-/* GUIDE HERO */
-.guide-hero {
+/* PAGE HERO (used on guide, catalog, submit, enter, admin pages) */
+.page-hero {
     background: linear-gradient(135deg, #0a4bd9, #1565c0);
     color: white;
     text-align: center;
     padding: 50px 20px;
 }
 
-.guide-hero h2 {
+.page-hero h2 {
     font-size: 36px;
     margin-bottom: 10px;
+}
+
+.page-hero p {
+    font-size: 15px;
+    opacity: 0.85;
 }
 
 /* GUIDE SECTION */

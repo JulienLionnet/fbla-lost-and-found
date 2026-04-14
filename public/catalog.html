@@ -16,7 +16,7 @@
 
         .filter-row select {
             padding: 10px 14px;
-            border-radius: 20px;
+            border-radius: 8px;
             border: 1px solid #ccc;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
@@ -24,12 +24,7 @@
             color: #1d2b4f;
             cursor: pointer;
             outline: none;
-        }
-
-        #itemList {
-            max-width: 700px;
-            margin: 30px auto 0;
-            padding: 0 20px;
+            width: 160px;
         }
     </style>
 </head>
@@ -56,9 +51,12 @@
     </a>
 </nav>
 
-<section class="catalog">
-
+<section class="page-hero">
     <h2>Item Catalog</h2>
+    <p>Browse all lost and found items submitted by students</p>
+</section>
+
+<section class="catalog">
 
     <div class="search-wrapper">
         <div>
@@ -88,7 +86,7 @@
     </div>
 
     <!-- Item List -->
-    <ul id="itemList"></ul>
+    <div id="itemList"></div>
 
 </section>
 
