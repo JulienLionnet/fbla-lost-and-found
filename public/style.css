@@ -242,7 +242,7 @@ footer {
 .search-bar {
     background: white;
     padding: 20px 30px;
-    border-radius: 20px;
+    border-radius: 12px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
@@ -251,7 +251,7 @@ footer {
 .search-bar input {
     padding: 12px 15px;
     width: 300px;
-    border-radius: 25px;
+    border-radius: 12px;
     border: 1px solid #ccc;
     outline: none;
 }
@@ -261,7 +261,7 @@ footer {
     border: none;
     background: #0a4bd9;
     color: white;
-    border-radius: 25px;
+    border-radius: 12px;
     margin-left: 10px;
     cursor: pointer;
     transition: 0.3s;
@@ -290,9 +290,6 @@ footer {
         
 }
 
-
-
-
 .form-container {
     background: white;
     width: 450px;
@@ -312,7 +309,7 @@ input, textarea {
     width: 100%;
     padding: 10px;
     margin-top: 6px;
-    border-radius: 6px;
+    border-radius: 12px;
     border: 1px solid #ccc;
 }
 
@@ -330,7 +327,7 @@ textarea {
 .item-type button {
     flex: 1;
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 12px;
     border: none;
     background: #e0e0e0;
     cursor: pointer;
@@ -348,7 +345,7 @@ textarea {
    background: linear-gradient(135deg, #1e88e5, #0d47a1);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
 }
