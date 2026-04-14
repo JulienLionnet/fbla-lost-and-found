@@ -134,7 +134,7 @@ function initCatalog() {
           <p style="font-size:13px;color:#555;margin:4px 0;"><strong>📍 Location:</strong> ${data.location || "—"}</p>
           <p style="font-size:13px;color:#555;margin:4px 0;"><strong>🕐 Date & Time:</strong> ${formatDateTime(data.dateTime)}</p>
           <p style="font-size:13px;color:#555;margin:4px 0;"><strong>📝 Description:</strong> ${data.description || "—"}</p>
-          ${data.imageUrl ? `<img src="${data.imageUrl}" style="display:block;margin:10px auto 0;border-radius:8px;max-width:100%;max-height:200px;object-fit:cover;">` : ""}
+          ${data.imageUrl ? `<img src="${data.imageUrl}" style="display:block;margin:20px auto 0;border-radius:8px;max-width:100%;max-height:200px;object-fit:cover;">` : ""}
         </div>
       `;
  
