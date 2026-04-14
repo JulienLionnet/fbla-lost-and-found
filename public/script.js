@@ -133,7 +133,7 @@ function initCatalog() {
           </div>
           <p style="font-size:13px;color:#555;margin:4px 0;"><strong>📍 Location:</strong> ${data.location || "—"}</p>
           <p style="font-size:13px;color:#555;margin:4px 0;"><strong>🕐 Date & Time:</strong> ${formatDateTime(data.dateTime)}</p>
-          <p style="font-size:13px;color:#555;margin:8px 0;">${data.description || ""}</p>
+          <p style="font-size:13px;color:#555;margin:8px 0;><strong>📝 Description:</strong> ${data.description || "—"}</p>
           ${data.imageUrl ? `<img src="${data.imageUrl}" style="margin-top:10px;border-radius:8px;max-width:180px;">` : ""}
         </div>
       `;
