@@ -107,7 +107,7 @@ function initCatalog() {
         category === "returned" ? "#1e88e5" : "#888";
  
       li.innerHTML = `
-        <div style="background:white;border-radius:12px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,0.08);height:280px; overflow:hidden;">
+        <div style="background:white;border-radius:12px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,0.08);height:380px; overflow:hidden;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
             <strong style="font-size:17px;color:#1d2b4f;">${data.name}</strong>
             <span style="background:${badgeColor};color:white;padding:3px 12px;border-radius:20px;font-size:12px;font-weight:bold;">
