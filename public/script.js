@@ -99,7 +99,7 @@ function initCatalog() {
  
     items.forEach(data => {
       const li = document.createElement("div");
-      li.style.cssText = "list-style:none; width:300px; flex-shrink:0;";
+      li.style.cssText = "list-style:none;"; 
       const category = (data.category || "unknown").toLowerCase();
       const badgeColor =
         category === "lost"     ? "#e53935" :
